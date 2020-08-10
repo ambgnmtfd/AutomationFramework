@@ -24,9 +24,12 @@ public class loginStepDefinition {
 		
 		//ChromeOptions
 		ChromeOptions options = new ChromeOptions();
-		options.add_argument('--no-sandbox');
-		options.add_argument('--headless');
-		options.add_argument('--disable-dev-shm-usage');
+		options.addArguments("start-maximized"); // open Browser in maximized mode
+		options.addArguments("disable-infobars"); // disabling infobars
+		options.addArguments("--disable-extensions"); // disabling extensions
+		options.addArguments("--disable-gpu"); // applicable to windows os only
+		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+		options.addArguments("--no-sandbox"); // Bypass OS security model
 		//ChromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
 		
 		driver = new ChromeDriver(options);
