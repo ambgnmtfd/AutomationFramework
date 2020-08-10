@@ -23,12 +23,18 @@ public class loginStepDefinition {
 		System.setProperty("webdriver.chrome.driver", "/var/lib/jenkins/workspace/Jenkins-Git-Maven-SeleniumCucumber/chromedriver");
 		
 		//ChromeOptions
-		ChromeOptions ChromeOptions = new ChromeOptions();
-		ChromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("start-maximized"); // open Browser in maximized mode
+		options.addArguments("disable-infobars"); // disabling infobars
+		options.addArguments("--disable-extensions"); // disabling extensions
+		options.addArguments("--disable-gpu"); // applicable to windows os only
+		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+		options.addArguments("--no-sandbox"); // Bypass OS security model
+		//ChromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
 		
-		driver = new ChromeDriver(ChromeOptions);
+		driver = new ChromeDriver(options);
 		
-		driver = new ChromeDriver();
+		//driver = new ChromeDriver();
 		driver.get("https://ui.freecrm.com/");
 	}
 	
