@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -20,6 +21,13 @@ public class loginStepDefinition {
 	@Given("^User is already on login page$")
 	public void user_already_on_login_page() {
 		System.setProperty("webdriver.chrome.driver", "/var/lib/jenkins/workspace/Jenkins-Git-Maven-SeleniumCucumber/chromedriver");
+		
+		//ChromeOptions
+		ChromeOptions ChromeOptions = new ChromeOptions();
+		ChromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
+		
+		driver = new ChromeDriver(ChromeOptions);
+		
 		driver = new ChromeDriver();
 		driver.get("https://ui.freecrm.com/");
 	}
