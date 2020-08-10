@@ -73,7 +73,7 @@ public class loginStepDefinition {
 	public void Close_the_browser() throws InterruptedException {
 		System.out.println("Executed all scenarios");
 		System.out.println("Closing the browser now...");
-		TimeUnit.SECONDS.sleep(5);
-		driver.quit();
+		//TimeUnit.SECONDS.sleep(5);
+		//driver.quit();
 	}
 }
