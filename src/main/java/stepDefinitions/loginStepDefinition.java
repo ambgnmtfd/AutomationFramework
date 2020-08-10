@@ -13,9 +13,6 @@ import cucumber.api.java.en.When;
 import edu.emory.mathcs.backport.java.util.concurrent.TimeUnit;
 import junit.framework.Assert;
 
-import static io.github.bonigarcia.wdm.DriverManagerType.CHROME;
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 @SuppressWarnings("deprecation")
 public class loginStepDefinition {
 	
@@ -23,8 +20,7 @@ public class loginStepDefinition {
 	
 	@Given("^User is already on login page$")
 	public void user_already_on_login_page() {
-		//System.setProperty("webdriver.chrome.driver", "/var/lib/jenkins/workspace/Jenkins-Git-Maven-SeleniumCucumber/chromedriver");
-		WebDriverManager.getInstance(CHROME).setup();
+		System.setProperty("webdriver.chrome.driver", "/var/lib/jenkins/workspace/Jenkins-Git-Maven-SeleniumCucumber/chromedriver");
 		
 		//ChromeOptions
 		ChromeOptions options = new ChromeOptions();
