@@ -21,6 +21,8 @@ public class loginStepDefinition {
 	@Given("^User is already on login page$")
 	public void user_already_on_login_page() {
 		System.setProperty("webdriver.chrome.driver", "/var/lib/jenkins/workspace/Jenkins-Git-Maven-SeleniumCucumber/chromedriver");
+		System.setProperty("webdriver.chrome.logfile", "/var/lib/jenkins/workspace/Jenkins-Git-Maven-SeleniumCucumber/chromedriver.log");
+		System.setProperty("webdriver.chrome.verboseLogging", "true");
 		
 		//ChromeOptions
 		ChromeOptions options = new ChromeOptions();
