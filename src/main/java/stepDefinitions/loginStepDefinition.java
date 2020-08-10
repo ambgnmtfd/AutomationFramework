@@ -20,16 +20,13 @@ public class loginStepDefinition {
 	
 	@Given("^User is already on login page$")
 	public void user_already_on_login_page() {
-		System.setProperty("webdriver.chrome.driver", "/var/lib/jenkins/workspace/Jenkins-Git-Maven-SeleniumCucumber/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/var/lib/jenkins/workspace/Jenkins-Git-Maven-SeleniumCucumber/chromedriver.exe");
 		
 		//ChromeOptions
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("start-maximized"); // open Browser in maximized mode
-		options.addArguments("disable-infobars"); // disabling infobars
-		options.addArguments("--disable-extensions"); // disabling extensions
-		options.addArguments("--disable-gpu"); // applicable to windows os only
-		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-		options.addArguments("--no-sandbox"); // Bypass OS security model
+		chrome_options.add_argument('--no-sandbox');
+		chrome_options.add_argument('--headless');
+		chrome_options.add_argument('--disable-dev-shm-usage');
 		//ChromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
 		
 		driver = new ChromeDriver(options);
