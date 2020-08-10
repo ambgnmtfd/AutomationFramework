@@ -30,9 +30,9 @@ public class loginStepDefinition {
 		//options.addArguments("--disable-gpu"); // applicable to windows os only
 		//options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 		//options.addArguments("--no-sandbox"); // Bypass OS security model
-		options.add_argument("no-sandbox");
-		options.add_argument("--disable-extensions");
-		options.add_argument("--headless");
+		options.addArguments("no-sandbox");
+		options.addArguments("--disable-extensions");
+		options.addArguments("--headless");
 		//ChromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
 		
 		driver = new ChromeDriver(options);
