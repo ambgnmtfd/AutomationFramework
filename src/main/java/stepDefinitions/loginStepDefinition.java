@@ -25,7 +25,7 @@ public class loginStepDefinition {
 		
 		//ChromeOptions
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--remote-debugging-port=8080");  # this
+		options.addArguments("--remote-debugging-port=8080");
 		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 		options.addArguments("--no-sandbox");
 		options.addArguments("--headless");
