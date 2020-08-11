@@ -20,7 +20,7 @@ public class loginStepDefinition {
 	
 	@Given("^User is already on login page$")
 	public void user_already_on_login_page() {
-		String chromedriverPath = "/usr/local/bin/chromedriver";
+		String chromedriverPath = "/usr/local/bin/chromedriver.exe";
 		System.setProperty("webdriver.chrome.driver", chromedriverPath);
 		
 		//ChromeOptions
@@ -30,10 +30,10 @@ public class loginStepDefinition {
 		//options.addArguments("--disable-extensions"); // disabling extensions
 		//options.addArguments("--disable-gpu"); // applicable to windows os only
 		//options.addArguments("--no-sandbox"); // Bypass OS security model
+		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 		options.addArguments("--no-sandbox");
 		options.addArguments("--headless");
 		options.addArguments("--disable-extensions");
-		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 		//ChromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
 		
 		driver = new ChromeDriver(options);
