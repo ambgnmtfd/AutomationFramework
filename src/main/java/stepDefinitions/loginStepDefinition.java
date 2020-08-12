@@ -27,6 +27,7 @@ public class loginStepDefinition {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-setuid-sandbox");
 		options.addArguments("--headless");
 		options.addArguments("--disable-extensions");
 		//options.addArguments("start-maximized"); // open Browser in maximized mode
